@@ -1,0 +1,32 @@
+﻿@page
+@model MyApp.Namespace.CustomersModel
+
+
+@{
+    // sets page title
+    ViewData["Title"] = "Northwind Customers";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead><tr>
+        <th>Customer ID</th>
+        <th>Company Name</th>
+        <th>Contact Name</th>
+        <th>Country</th>
+    </tr></thead>
+    <tbody>
+        <!-- loops through customers and adds each row to the table -->
+        @foreach (var customer in Model.Customers)
+        {
+            <tr>
+                <td>@customer.CustomerID</td>
+                <td>@customer.CompanyName</td>
+                <td>@customer.ContactName</td>
+                <td>@customer.Country</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
